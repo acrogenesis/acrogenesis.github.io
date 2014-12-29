@@ -10,3 +10,7 @@ github_username:  acrogenesis
 
 # Build settings
 markdown: kramdown
+
+# Outputting
+permalink: pretty
+timezone: Monterrey

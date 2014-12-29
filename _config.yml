@@ -14,3 +14,22 @@ markdown: kramdown
 # Outputting
 permalink: pretty
 timezone: Monterrey
+
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+
+author:
+  name: Adrian Rangel
+  email: acrogenesis@gmail.com
+  github: acrogenesis
+  twitter: acrogenesis
+  bio: Bleeding Edge Developer.
+  email_md5: 4d574942e2627e5a01262657dda8a299
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH:

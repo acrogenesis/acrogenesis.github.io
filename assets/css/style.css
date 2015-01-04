@@ -236,7 +236,7 @@ main > div:first-child {
   height: 0;
   overflow: hidden;
   margin-bottom: 50px;
-  background-color: rgba(77, 58, 68, 1);
+  background-color: rgba(36, 36, 36, 1);
 }
 
 @media screen and (max-width: 628px) {

@@ -4,7 +4,7 @@ email: adrian.rangel@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Bleeding Edge Developer.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://acrogenesis.com" # the base hostname & protocol for your site
+url: "https://acrogenesis.com" # the base hostname & protocol for your site
 twitter_username: acrogenesis
 github_username:  acrogenesis
 

@@ -1,184 +1,276 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
+* { box-sizing: border-box; }
 
-body{
-  color: #2c3e50;
+html { height: 100%; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6em;
+
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-.sidebar {
-  background-color: #2c3e50;
-  color: #fff;
-  padding-top: 10%;
-  position: fixed;
-  top: 0;
+a {
+  color: #4a3c44;
+
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
 }
 
-.sidebar-header {
-  margin-bottom: 10px;
+a:hover { color: #cc5b68; }
+
+img {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+p { margin-top: 0; }
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+blockquote {
+  font-size: 1.6rem;
+
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+
+  position: absolute;
+  left: -41px;
+  top: 5px;
+}
+
+/*
+ * The header is displayed as a fixed sidebar. It's hidden on smaller screen sizes.
+ */
+header {
   text-align: center;
-}
-.sidebar-header .title{
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  color: #999;
+
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  background-color: rgba(77, 58, 68, 1);
+  background-image: url(/assets/images/bears_small_overlay.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 8;
 }
 
-.sidebar-header .title a{
-  color: #fff;
+@media screen and (max-width: 820px) {
+  header { width: 200px; }
+}
+
+@media screen and (max-width: 628px) {
+  header {
+    width: 0;
+    overflow: hidden;
+
+    -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+  }
+
+  /*
+   * A slide-out menu implementation.
+   *
+   * On small screen sizes the sidebar (header) disappears, and the user sees a
+   * standard menu icon. When the icon is clicked header:target selector is
+   * triggered and the sidebar appears. The main content is moved 200px to the right
+   * so tat the sidebar wouldn't overlap with it, and the menu icon would
+   * still be available to click (it's necessary to close the sidebar).
+   */
+  header:target { width: 200px; }
+  header:target + main { right: -200px; }
+  header:target + main #menu-switch-on { display: none; }
+  header:target + main #menu-switch-off { display: inline-block; }
+}
+
+header a {
+  color: white;
   text-decoration: none;
 }
 
-a.nav-link {
-  color: #aaa;
-  padding-bottom: 5px;
-  padding-top: 7px;
-}
-a.nav-link i{
-  font-size: 16px;
-}
-a.nav-link:hover { color: #777 }
+header nav {
+  font-variant: small-caps;
 
-#bio {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 11px;
-  margin-bottom: 10px;
-  margin: 0 auto;
+  margin-top: 32px;
 }
 
-#contact-list li .fa,
-article .share .btn {
-  -o-transition:color .2s ease-out, background 1s ease-in;
-  -ms-transition:color .2s ease-out, background 1s ease-in;
-  -moz-transition:color .2s ease-out, background 1s ease-in;
-  -webkit-transition:color .2s ease-out, background 1s ease-in;
-  transition:color .2s ease-out, background 1s ease-in;
-}
-#contact-list li:hover .fa-twitter,
-article .share .twitter:hover {
-  border-color: #00ACEE;
-  color: #00ACEE;
-}
-#contact-list li:hover .fa-linkedin {
-  color: #1D87BD;
-}
-#contact-list li:hover .fa-envelope {
-  color: #E93E30;
-}
-#contact-list li:hover .fa-pinterest {
-  color: #CC2127;
-}
-#contact-list li:hover .fa-rss {
-  color: #e74c3c;
-}
-article .share .facebook:hover {
-  border-color: #43609C;
-  color: #43609C;
-}
-article .share .gplus:hover {
-  border-color: #C13929;
-  color: #C13929;
-}
+header nav a {
+  font-size: 1.1rem;
 
-#contact-list-secondary {
-  padding-bottom: 10px;
-}
-
-.page-header {
-  color: #e74c3c;
-  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-}
-
-article{
-  margin-bottom: 40px;
-}
-
-.article_body{
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.post-date {
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-article {
-  padding: 0 5% 0;
-}
-
-article.home div a, article.home pre a { color: #2c3e50; }
-article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
-article img { max-width: 100%; }
-
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
-article.home h1,
-article.home h2,
-article.home h3,
-article.home h4,
-article.home h5,
-article.home h6 {
-  color: #f2756a;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-article.home h1 a,
-article.home h2 a,
-article.home h3 a,
-article.home h4 a {
-  color: #f2756a;
-}
-article.home h1 a:hover,
-article.home h2 a:hover,
-article.home h3 a:hover,
-article.home h4 a:hover {
-  color: #e74c3c;
-}
-
-.author .author-image {
-  float: left;
-  margin-right: 20px;
-}
-
-footer {
-  font-family: 'Ubuntu';
+  display: block;
+  height: 60px;
   padding-top: 15px;
 }
 
-/* nav-vertical-tabs component */
-.nav-tabs-vertical {
-  border-right: 1px solid #ddd;
+@media screen and (max-width: 820px) {
+  header nav a {
+    height: 40px;
+    padding-top: 6px;
+  }
 }
 
-.nav-tabs-vertical li {
-  margin-right: -1px;
+header nav a.current {
+  color: #333;
+
+  background-color: rgba(255, 255, 255, .4);
 }
 
-.nav-tabs-vertical>li.active>a, .nav-tabs-vertical>li.active>a:hover, .nav-tabs-vertical>li.active>a:focus {
-  background-color: #fff;
-  border-right-color: transparent;
-  border: 1px solid #ddd;
-  color: #555;
-  cursor: default;
+header img:first-child {
+  max-width: 200px;
+  margin-top: 40px;
+  border-radius: 50%;
 }
 
-.nav-tabs-vertical>li>a {
-  border-radius: 4px 0 0 4px;
-  border: 1px solid transparent;
-  line-height: 1.428571429;
+@media screen and (max-width: 820px) {
+  header img:first-child {
+    max-width: 140px;
+    margin-top: 40px;
+    border-radius: 50%;
+  }
 }
 
-.badge { background: #F2756A; }
+header h1 { color: white; }
 
-#nav-menu{
-  position: fixed;
-  right: 45px;
-  top: 45px;
-  z-index: 2000;
-}
-#nav-menu .dropdown-menu {
-  left: inherit;
-  right: 0;
+/*@media screen and (max-width: 820px) {
+  header h1 { font-size: 1.2rem; }
+}*/
+
+header p {
+  /*font-size: 1rem;*/
+  font-style: italic;
+  line-height: 1.2;
+
+  margin: 0 40px;
 }
 
-ul.dropdown-menu>li>a>i.fa {
-  width: 1.3em;
+@media screen and (max-width: 820px) {
+  header p {
+    font-size: .98rem;
+
+    margin: 0 20px;
+  }
 }
+
+/*
+ * Social network links and other contact information is displayed in the
+ * bottom of the sidebar.
+ */
+header > div:last-child {
+  position: absolute;
+  bottom: 10px;
+  width: 300px;
+}
+
+@media screen and (max-width: 820px) {
+  header > div:last-child { width: 200px; }
+}
+
+header > div:last-child a {
+  font-size: 1.2rem;
+
+  display: inline-block;
+  margin: 0 4px;
+}
+
+main {
+  display: block;
+  padding-left: 300px;
+  position: relative;
+}
+
+@media screen and (max-width: 820px) {
+  main { padding-left: 200px; }
+}
+
+@media screen and (max-width: 628px) {
+  main {
+    padding-left: 0;
+
+    -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+  }
+}
+
+main > div:nth-child(2),
+footer p {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+main > div:first-child {
+  font-size: 1.4rem;
+
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 50px;
+  background-color: rgba(77, 58, 68, 1);
+}
+
+@media screen and (max-width: 628px) {
+  main > div:first-child {
+    padding: 10px 20px 0;
+    height: 44px;
+    overflow: hidden;
+  }
+}
+
+main > div:first-child a,
+main > div:first-child span {
+  display: inline-block;
+  color: white;
+}
+
+main > div:first-child > a:last-child {
+  font-size: 1rem;
+  text-decoration: none;
+
+  float: right;
+}
+
+#menu-switch-off { display: none; }
+
+div.home article { margin-bottom: 60px; }
+
+.meta {
+  font-size: .9rem;
+  color: #999;
+
+  margin-bottom: 20px;
+}
+
+footer {
+  font-size: .9rem;
+
+  padding-bottom: 20px;
+  margin-top: 60px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

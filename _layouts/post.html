@@ -1,4 +1,14 @@
 ---
 layout: default
 ---
-{% include post.html %}
+
+<section>
+  <article>
+    <h2>{{page.title}}</h2>
+    <div class="meta">
+      <time>{{ page.date | date: '%d %b %Y' }}</time> | {{page.tags | join: ', '}}
+    </div>
+
+    {{content}}
+  </article>
+</section>

@@ -12,7 +12,7 @@
         <a href="{{site.baseurl}}/">{{site.title}}</a>
       </div>
       <div class="{{page.title | downcase | replace: ' ', '-'}}">
-        {% content %}
+        {{ content }}
       </div>
       {% include footer.html %}
     </main>

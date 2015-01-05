@@ -15,3 +15,4 @@ markdown: kramdown
 permalink: /:title
 timezone: Monterrey
 paginate: 5
+highlighter: pygments

@@ -187,14 +187,14 @@ header p {
  * Social network links and other contact information is displayed in the
  * bottom of the sidebar.
  */
-header > div:last-child {
+.social-links {
   position: absolute;
   bottom: 10px;
   width: 300px;
 }
 
 @media screen and (max-width: 820px) {
-  header > div:last-child { width: 200px; }
+  .social-links { width: 200px; }
 }
 
 header > div:last-child a {

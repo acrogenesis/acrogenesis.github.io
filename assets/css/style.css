@@ -76,7 +76,7 @@ header {
 }
 
 header::after {
-  background-color: rgba(36, 36, 36, 0.8);
+  background-color: rgba(36, 36, 36, 0.6);
   content: '';
   display: block;
   position: absolute;

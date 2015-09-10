@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "PORO decorators with SimpleDelegator"
+slug: 'poro-decorators-with-simpledelegator'
 date: "2015-01-19"
+author: acrogenesis
+comments: true
 ---
 
 An easy and __PORO__ way to create decorators is using ruby's

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main>
+      <div class="clearfix">
+        <span id="menu-switch-container">
+          <a href="#main-header" id="menu-switch-on"><i class="fa fa-bars"></i></a>
+          <a href="#" id="menu-switch-off"><i class="fa fa-bars"></i></a>
+        </span>
+        <a href="{{site.baseurl}}/">{{site.title}}</a>
+      </div>
+      <div class="{{page.title | downcase | replace: ' ', '-'}}">
+        {{ content }}
+      </div>
+      {% include footer.html %}
+    </main>
+  </body>
+</html>

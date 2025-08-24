@@ -6,7 +6,6 @@ date: "2025-08-24"
 author: acrogenesis
 comments: true
 ---
-## Why?
 
 I'm using [Omarchy](https://omarchy.org/) which has a curated `bash` shell but I miss [oh my zsh](https://ohmyz.sh/) `git`, `elixir`, and `kubectl` aliases.
 Here’s a quick guide to porting those aliases directly into your existing Bash environment.

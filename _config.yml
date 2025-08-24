@@ -29,7 +29,7 @@ plugins:
   - jekyll-feed
 
 permalink: /:title
-timezone: Monterrey
+timezone: America/Monterrey
 paginate: 5
 highlighter: pygments
 # Exclude from processing.

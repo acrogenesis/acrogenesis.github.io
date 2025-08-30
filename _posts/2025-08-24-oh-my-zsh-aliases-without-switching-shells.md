@@ -57,6 +57,7 @@ unset OMZ_PLUGINS
 ### Step 3: Reload your shell
 
 To make the aliases available in your current session reload your `.bashrc` file.
+
 ```bash
 source ~/.bashrc
 ```

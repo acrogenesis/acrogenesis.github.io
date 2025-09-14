@@ -5,7 +5,7 @@ slug: "run-https-on-localhost-the-easy-way"
 date: "2024-09-14"
 author: acrogenesis
 comments: true
-permalink: /:title/
+permalink: /:slug
 ---
 Setting up HTTPS on localhost doesn't have to be a headache. With a few simple steps, you can have a secure local development environment up and running in no time. Here's how:
 

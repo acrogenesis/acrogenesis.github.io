@@ -5,7 +5,7 @@ slug: "how-to-fix-print-screen-on-mac-keyboards-in-omarchy"
 date: "2025-08-29"
 author: acrogenesis
 comments: true
-permalink: /:title/
+permalink: /:slug
 ---
 
 You've just set up your sleek new Omarchy system, and you plug in your favorite keyboard, like a Keychron. You flip it into "Mac mode" because the keycaps match your layout, but when you press the Print Screen key... the app moves to a new screen.

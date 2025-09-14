@@ -8,7 +8,7 @@ title: How to bypass API restrictions
 wordpress_id: 21
 categories:
 - How-To
-permalink: /:title/
+permalink: /:slug
 ---
 
 Don't you hate it when a free API has limits on the number of request you can do? I was hitting the wunderground.com and openexchangerates.org API's limits often. The problem was when we had a traffic spike. We didn't want to pay for premium the same way we don't want to pay extra bandwidth in case of a spontaneous traffic surge. So we came with the idea to cache it. Here's an easy way to ‘cache’ the API's JSON response.

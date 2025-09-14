@@ -5,7 +5,7 @@ slug: "get-oh-my-zsh-aliases-without-zsh"
 date: "2025-08-24"
 author: acrogenesis
 comments: true
-permalink: /:title/
+permalink: /:slug
 ---
 
 I'm using [Omarchy](https://omarchy.org/) which has a curated `bash` shell but I miss [oh my zsh](https://ohmyz.sh/) `git`, `elixir`, and `kubectl` aliases.

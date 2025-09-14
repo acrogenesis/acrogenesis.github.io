@@ -5,7 +5,7 @@ slug: "running-intel-python-on-m1"
 date: "2021-11-25"
 author: acrogenesis
 comments: true
-permalink: /:title/
+permalink: /:slug
 ---
 Following these instructions should enable you to have both arm and intel python installed and ready to use.
 

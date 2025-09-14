@@ -8,7 +8,7 @@ title: My top aliases and functions for terminal
 wordpress_id: 40
 categories:
 - Terminal
-permalink: /:title/
+permalink: /:slug
 ---
 
 This are my top aliases for terminal, I've order them on how frequently I use them and separated by topics.

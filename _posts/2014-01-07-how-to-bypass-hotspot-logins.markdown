@@ -8,7 +8,7 @@ title: How to Bypass Hotspot logins on a mac
 wordpress_id: 57
 categories:
 - How-To
-permalink: /:title/
+permalink: /:slug
 ---
 
 If you are reading this you have probably faced a Hotspot at an airport, hotel, cafe etc. where the WiFi access was open but you faced a Hotspot login portal asking you to agree terms & conditions or pay a fee.

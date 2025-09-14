@@ -5,7 +5,7 @@ slug: 'poro-decorators-with-simpledelegator'
 date: "2015-01-19"
 author: acrogenesis
 comments: true
-permalink: /:title/
+permalink: /:slug
 ---
 
 An easy and __PORO__ way to create decorators is using ruby's

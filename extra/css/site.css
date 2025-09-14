@@ -1,0 +1,78 @@
+/* Early-2000s hacker vibe (dark is default) */
+:root,
+:root[data-theme="dark"] {
+  --bg: #000;
+  --fg: #c7f7c7;
+  --muted: #8ccf8c;
+  --accent: #7CFC00;
+  --accent-2: #BFFF00;
+  --rule: #1c3b1c;
+}
+
+/* Light theme overrides */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #555555;
+  --accent: #0645AD; /* classic blue link */
+  --accent-2: #0b61d6;
+  --rule: #dddddd;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.5 "Courier New", Courier, monospace;
+}
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 12px; }
+
+.site-header { border-bottom: 1px dashed var(--rule); padding: 12px 0; }
+.site-title { margin: 0 0 6px 0; font-size: 20px; letter-spacing: 1px; font-weight: normal; }
+.site-title a { color: var(--accent); text-decoration: none; }
+.site-nav a { color: var(--muted); text-decoration: underline; }
+.site-nav .sep { color: var(--rule); margin: 0 6px; }
+.theme-toggle { background: transparent; color: var(--muted); border: 1px dashed var(--rule); padding: 2px 6px; font: inherit; cursor: pointer; }
+.theme-toggle:hover { color: var(--fg); border-color: var(--muted); }
+
+.site-footer { border-top: 1px dashed var(--rule); margin-top: 32px; padding: 16px 0; color: var(--muted); }
+.ascii { margin: 0; color: var(--muted); }
+
+a { color: var(--accent); text-decoration: underline; }
+a:hover { color: var(--accent-2); }
+
+hr { border: 0; border-top: 1px dashed var(--rule); margin: 16px 0; }
+
+.intro p { margin: 12px 0; }
+
+.projects { margin: 16px 0; }
+.projects h2 { margin: 0 0 6px 0; font-size: 16px; font-weight: normal; color: var(--muted); }
+.projects ul { list-style: square; padding-left: 18px; margin: 6px 0 12px; }
+.projects li { margin: 4px 0; }
+
+.post-list ul { list-style: none; padding: 0; margin: 0; }
+.post-list li { padding: 6px 0; border-bottom: 1px dotted var(--rule); }
+.post-list .date { color: var(--muted); display: inline-block; width: 96px; }
+
+.post { margin: 24px 0; }
+.post-title { margin: 0; font-size: 22px; letter-spacing: 1px; }
+.post-meta { margin: 6px 0 0 0; color: var(--muted); }
+.post-body p { margin: 12px 0; }
+.post-body code { background: color-mix(in oklab, var(--bg) 85%, #000); padding: 2px 4px; border: 1px solid color-mix(in oklab, var(--bg) 70%, #000); }
+.post-body pre { background: color-mix(in oklab, var(--bg) 90%, #000); padding: 12px; overflow: auto; border: 1px solid color-mix(in oklab, var(--bg) 75%, #000); }
+.post-body pre code { background: transparent; padding: 0; border: 0; }
+
+.comments { margin-top: 28px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+.comments h2 { margin: 0 0 10px 0; font-size: 16px; font-weight: normal; color: var(--muted); }
+.comments-toggle { background: transparent; color: var(--muted); border: 1px dashed var(--rule); padding: 4px 8px; font: inherit; cursor: pointer; }
+.comments-toggle:hover { color: var(--fg); border-color: var(--muted); }
+
+/* Tables and blockquotes */
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid color-mix(in oklab, var(--bg) 75%, #000); padding: 4px 6px; }
+blockquote { border-left: 2px solid var(--rule); margin: 0; padding: 8px 12px; color: var(--muted); }
+
+/* Images */
+img { max-width: 100%; height: auto; border: 1px solid color-mix(in oklab, var(--bg) 80%, #000); }

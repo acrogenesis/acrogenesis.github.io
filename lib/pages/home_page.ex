@@ -8,17 +8,19 @@ defmodule AcrogenesisCom.HomePage do
   def template(assigns) do
     ~H"""
     <section class="intro">
-      <p>notes, how-tos, and experiments.</p>
+      <p><%= site_tagline() %></p>
       <hr/>
     </section>
 
     <section class="projects">
       <h2>projects</h2>
       <ul>
-        <li><a href="https://pgorbit.com/" target="_blank" rel="noopener">PG Orbit</a> Desktop-Class PostgreSQL Management in Your Pocket</li>
-        <li><a href="https://ajsonviewer.browserutils.com/" target="_blank" rel="noopener">Advanced JSON Viewer</a> Safari Extension for macOS, iOS, and visionOS</li>
-        <li><a href="https://acrogenesis.com/macchanger/" target="_blank" rel="noopener">macchanger</a> Change your MAC address easily on macOS</li>
-        <li><a href="https://acrogenesis.com/omarchy-cheat-sheet/" target="_blank" rel="noopener">Omarchy Hotkeys</a> Printable cheat-sheet of official <a href="https://omarchy.org/" target="_blank" rel="noopener">Omarchy</a> Hotkeys</li>
+        <%= for project <- projects() do %>
+          <li>
+            <a href="<%= project.url %>" target="_blank" rel="noopener"><%= project.name %></a>
+            <span class="project-description"> – <%= project.description %></span>
+          </li>
+        <% end %>
       </ul>
     </section>
 

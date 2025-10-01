@@ -9,15 +9,30 @@ defmodule AcrogenesisCom.RootLayout do
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <meta http_equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>
-          <%= [@page[:title], "acrogenesis.com"]
-              |> Enum.filter(& &1)
-              |> Enum.intersperse("|")
-              |> Enum.join(" ") %>
-        </title>
+        <title><%= page_title(assigns) %></title>
+        <meta name="description" content="<%= page_description(assigns) %>" />
+        <link rel="canonical" href="<%= canonical_url(assigns) %>" />
+        <link rel="alternate" type="application/rss+xml" title="<%= site_name() %>" href="<%= rss_url() %>" />
+
+        <meta property="og:site_name" content="<%= site_name() %>" />
+        <meta property="og:title" content="<%= page_title(assigns) %>" />
+        <meta property="og:description" content="<%= page_description(assigns) %>" />
+        <meta property="og:url" content="<%= canonical_url(assigns) %>" />
+        <meta property="og:type" content="<%= og_type(assigns) %>" />
+        <%= if image = social_image(assigns) do %>
+          <meta property="og:image" content="<%= image %>" />
+        <% end %>
+
+        <meta name="twitter:card" content="<%= twitter_card(assigns) %>" />
+        <meta name="twitter:title" content="<%= page_title(assigns) %>" />
+        <meta name="twitter:description" content="<%= page_description(assigns) %>" />
+        <meta name="twitter:site" content="@acrogenesis" />
+        <%= if image = social_image(assigns) do %>
+          <meta name="twitter:image" content="<%= image %>" />
+        <% end %>
         <script>
           (function() {
             try {
@@ -30,32 +45,32 @@ defmodule AcrogenesisCom.RootLayout do
           })();
         </script>
         <link rel="stylesheet" href="/css/site.css" />
-        <script src="/js/site.js"></script>
+        <script defer src="/js/site.js"></script>
       </head>
 
       <body>
         <header class="site-header">
           <div class="container">
-            <h1 class="site-title"><a href="/">acrogenesis.com</a></h1>
-            <nav class="site-nav">
+            <p class="site-title"><a href="/">acrogenesis.com</a></p>
+            <nav class="site-nav" aria-label="Primary">
               <a href="/">home</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <a href="/archive">archive</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <a href="/feed.xml">rss</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <a href="mailto:adrian.rangel@gmail.com">contact</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <a href="https://x.com/acrogenesis" target="_blank" rel="noopener">𝕏</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <a href="https://github.com/acrogenesis" target="_blank" rel="noopener">github</a>
-              <span class="sep">|</span>
+              <span class="sep" aria-hidden="true">|</span>
               <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">theme: auto</button>
             </nav>
           </div>
         </header>
 
-        <main class="container">
+        <main class="container" id="main-content">
           <%= render @inner_content %>
         </main>
 

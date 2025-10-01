@@ -22,7 +22,7 @@ On your Omarchy (or Hyprland on Arch) machine:
 
 This will handle the installation and setup for you.
 
-**For wayvnc, or if you prefer the terminal:**
+**For wayvnc:**
 
 ```bash
 yay -S wayvnc tailscale

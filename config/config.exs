@@ -43,7 +43,7 @@ config :tableau, Tableau.SitemapExtension, enabled: true
 
 config :tableau, Tableau.RSSExtension,
   enabled: true,
-  title: "acrogenesis_com",
+  title: "acrogenesis.com",
   description: "notes, how-tos, and experiments."
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase

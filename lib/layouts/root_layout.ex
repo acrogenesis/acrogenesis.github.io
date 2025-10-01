@@ -13,7 +13,7 @@ defmodule AcrogenesisCom.RootLayout do
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>
-          <%= [@page[:title], "acrogenesis_com"]
+          <%= [@page[:title], "acrogenesis.com"]
               |> Enum.filter(& &1)
               |> Enum.intersperse("|")
               |> Enum.join(" ") %>

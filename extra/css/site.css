@@ -7,6 +7,13 @@
   --accent: #7CFC00;
   --accent-2: #BFFF00;
   --rule: #1c3b1c;
+  /* Inline code tokens (dark) */
+  --code-bg: #071907; /* slightly lighter than bg for subtle plate */
+  --code-border: #143514;
+  --code-fg: var(--fg);
+  /* Panels / blocks */
+  --panel-bg: #0b170b; /* was color-mix 92% */
+  --panel-border: #143514; /* aligns with code border */
 }
 
 /* Light theme overrides */
@@ -17,6 +24,13 @@
   --accent: #0645AD; /* classic blue link */
   --accent-2: #0b61d6;
   --rule: #dddddd;
+  /* Inline code tokens (light) */
+  --code-bg: #f5f7fa; /* soft subtle gray/blue */
+  --code-border: #d0d7de;
+  --code-fg: #0f2d40;
+  /* Panels / blocks */
+  --panel-bg: #f3f5f7;
+  --panel-border: #d0d7de;
 }
 
 html, body { height: 100%; }
@@ -60,9 +74,43 @@ hr { border: 0; border-top: 1px dashed var(--rule); margin: 16px 0; }
 .post-title { margin: 0; font-size: 22px; letter-spacing: 1px; }
 .post-meta { margin: 6px 0 0 0; color: var(--muted); }
 .post-body p { margin: 12px 0; }
-.post-body code { background: color-mix(in oklab, var(--bg) 85%, var(--fg)); padding: 2px 4px; border: 1px solid color-mix(in oklab, var(--bg) 70%, var(--fg)); }
-.post-body pre { background: color-mix(in oklab, var(--bg) 90%, #000); padding: 12px; overflow: auto; border: 1px solid color-mix(in oklab, var(--bg) 75%, #000); }
-.post-body pre code { background: transparent; padding: 0; border: 0; }
+/* Inline code (single backticks). Use :not(pre) to avoid block snippets */
+.post-body :not(pre) > code {
+  font-size: 0.93em; /* visually balance vertical height with surrounding monospace */
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 1px 4px 2px; /* slight bottom padding to center glyphs */
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  line-height: 1.3; /* tighten so border doesn't expand line too much */
+  white-space: nowrap; /* prevent awkward wraps for short tokens */
+}
+
+/* Allow wrapping for very long inline code strings when needed */
+.post-body :not(pre) > code.wrap {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Block code (fenced ``` or indentation) */
+.post-body pre {
+  background: var(--panel-bg);
+  padding: 12px 14px;
+  overflow: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  line-height: 1.4;
+}
+.post-body pre code {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  font-size: 0.9em; /* slightly smaller to reduce dominance */
+  white-space: pre; /* ensure indentation preserved */
+}
+
+/* Improve contrast for inline code when inside links */
+a code { color: inherit; }
 
 .comments { margin-top: 28px; padding-top: 8px; border-top: 1px dashed var(--rule); }
 .comments h2 { margin: 0 0 10px 0; font-size: 16px; font-weight: normal; color: var(--muted); }
@@ -71,8 +119,8 @@ hr { border: 0; border-top: 1px dashed var(--rule); margin: 16px 0; }
 
 /* Tables and blockquotes */
 table { border-collapse: collapse; width: 100%; }
-td, th { border: 1px solid color-mix(in oklab, var(--bg) 75%, #000); padding: 4px 6px; }
+td, th { border: 1px solid var(--panel-border); padding: 4px 6px; }
 blockquote { border-left: 2px solid var(--rule); margin: 0; padding: 8px 12px; color: var(--muted); }
 
 /* Images */
-img { max-width: 100%; height: auto; border: 1px solid color-mix(in oklab, var(--bg) 80%, #000); }
+img { max-width: 100%; height: auto; border: 1px solid var(--panel-border); }

@@ -32,7 +32,8 @@ config :tableau, :config,
         footnotes: true
       ],
       render: [unsafe: true],
-      syntax_highlight: [formatter: {:html_inline, theme: "neovim_dark"}]
+      syntax_highlight: [formatter: {:html_inline, theme: "neovim_dark"}],
+      plugins: [MDExMermaid]
     ]
   ]
 
